@@ -1,7 +1,17 @@
 import React from 'react'
 import {Outlet, Link} from 'react-router-dom';
+import { search } from '../client_api/product'
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
+    const navigate = useNavigate()
+    const onSearch = () => {
+        const search_value = (document.querySelector('#search_content') as HTMLInputElement).value
+        if (search_value != "") {
+            navigate(`/search/${search_value}`)
+        }
+    }
+
   return (
     <div>
         <header id="header">
@@ -55,8 +65,8 @@ export default function Header() {
                                 <option value="5">Sony</option>
                                 <option value="6">Xaomi</option>
                             </select>
-                            <input type="text" className="header__search-input" placeholder="Tìm kiếm tại đây..."/>
-                            <button className="header__search-btn">
+                            <input type="text" id="search_content" className="header__search-input" placeholder="Tìm kiếm tại đây..."/>
+                            <button onClick={onSearch} aria-label="Search"  className="header__search-btn">
                                 <div className="header__search-icon-wrap">
                                     <i className="fas fa-search header__search-icon"></i>
                                 </div>

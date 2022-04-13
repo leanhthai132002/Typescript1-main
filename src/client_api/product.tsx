@@ -20,3 +20,7 @@ export const deleteProduct = (_id: number|string) => {
 export const updateProduct = (_id:string|undefined, data :any) => {
     return api.put(`/product/${_id}`, data);
 };
+export const search = (search_value: string | undefined) => {
+    const url = `/search/?q=${search_value}`
+    return api.post(url)
+}

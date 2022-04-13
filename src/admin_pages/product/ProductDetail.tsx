@@ -20,14 +20,14 @@ function ProductDetail() {
         <div style={{ marginLeft: '250px' }}>
             <p>ID: {product?._id}</p>
             <p>Tên: {product?.name}</p>
-            <p>Mô tả: {product?.desc}</p>
+            <p>Mô tả: {product?.desc}  </p>
             <p>Giá: {product?.price}</p>
             <p>Danh mục: {product?.category}</p>
             <p>Ảnh: {product?.image
                 ? <img src={product?.image} width={100} alt="" />
                 : null}
             </p>
-            <p>Trạng thái: {product?.status ? 'Ẩn' : 'Hiển thị'}</p>
+            <p>Trạng thái: {product?.status ? 'Hiển thị' : 'Ẩn'}</p>
         </div>
     );
 }

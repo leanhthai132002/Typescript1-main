@@ -9,6 +9,7 @@ import Post from "./client_pages/layout/post";
 import Detail from "./client_pages/layout/detail";
 import Contact from "./client_pages/layout/contact";
 import Cart from "./client_pages/layout/cart";
+import Search from "./client_pages/Search";
 import AdminLayout from "./admin_pages";
 import ProductDetail from "./admin_pages/product/ProductDetail";
 import Login from "./client_pages/user/login";
@@ -40,6 +41,9 @@ function AppClone(){
                     </Route>
                     <Route path={'product/:id'}>
                         <Route index element={<Detail />} />
+                    </Route>
+                    <Route path={'search/:search_value'}>
+                        <Route index element={<Search />} />
                     </Route>
                 </Route> 
 

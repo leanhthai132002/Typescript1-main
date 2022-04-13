@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Outlet, Link } from 'react-router-dom';
 import { getProduct } from '../../client_api/product';
 import { useParams } from 'react-router-dom';
-
 export type PRODUCT = {
   _id: number,
   name: string,
@@ -91,8 +90,7 @@ const Detail = () => {
                       {product?.price}
                       </span>
                     </div>
-                    <div className="product__main-info-description">
-                    {product?.desc} </div>
+                   
                     <div className="product__main-info-cart">
                       <div className="product__main-info-cart-quantity">
                         <input type="button" defaultValue="-" className="product__main-info-cart-quantity-minus" />
@@ -126,12 +124,14 @@ const Detail = () => {
                     </div>
                   </div>
                 </div>
-                 
+                 <div className='row bg-white'>
+                 {product?.desc}
+                 </div>
               </article>
               <aside className="product__aside col-lg-3 col-md-0 col-sm-0">
                 <div className="product__aside-top">
                   <div className="product__aside-top-item">
-                    <img src="./client/img/shipper.png" />
+                    <img src=".././img/shipper.png" />
                     <div className="product__aside-top-item-text">
                       <p>
                         Giao hàng nhanh chóng
@@ -142,7 +142,7 @@ const Detail = () => {
                     </div>
                   </div>
                   <div className="product__aside-top-item">
-                    <img src="./client/img/brand.png" />
+                    <img src="../img/brand.png"/>
                     <div className="product__aside-top-item-text">
                       <p>
                         Sản phẩm chính hãng
@@ -153,7 +153,7 @@ const Detail = () => {
                     </div>
                   </div>
                   <div className="product__aside-top-item">
-                    <img src="./client/img/less.png" />
+                    <img src="../img/less.png" />
                     <div className="product__aside-top-item-text">
                       <p>
                         Mua hàng tiết kiệm
@@ -171,7 +171,7 @@ const Detail = () => {
                   <div className="product__aside-list">
                     <div className="product__aside-item product__aside-item--border">
                       <div className="product__aside-img-wrap">
-                        <img src="./client/img/product-1.png" className="product__aside-img" />
+                        <img src="../img/product-1.png" className="product__aside-img" />
                       </div>
                       <div className="product__aside-title">
                         <a href="#" className="product__aside-link">
@@ -193,7 +193,7 @@ const Detail = () => {
                     </div>
                     <div className="product__aside-item">
                       <div className="product__aside-img-wrap">
-                        <img src="./client/img/product-7.png" className="product__aside-img" />
+                        <img src="../../.../public/client/img/product-7.png" className="product__aside-img" />
                       </div>
                       <div className="product__aside-title">
                         <a href="#" className="product__aside-link">
@@ -215,7 +215,7 @@ const Detail = () => {
                     </div>
                     <div className="product__aside-item">
                       <div className="product__aside-img-wrap">
-                        <img src="./client/img/product-8.png" className="product__aside-img" />
+                        <img src="../img/product-8.png" className="product__aside-img" />
                       </div>
                       <div className="product__aside-title">
                         <a href="#" className="product__aside-link">
@@ -235,72 +235,7 @@ const Detail = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="product__aside-item">
-                      <div className="product__aside-img-wrap">
-                        <img src="./client/img/product-12.png" className="product__aside-img" />
-                      </div>
-                      <div className="product__aside-title">
-                        <a href="#" className="product__aside-link">
-                          <h4 className="product__aside-link-heading">Điện thoại iPhone 11 64GB</h4>
-                        </a>
-                        <div className="product__aside-rate-wrap">
-                          <i className="fas fa-star product__aside-rate" />
-                          <i className="fas fa-star product__aside-rate" />
-                          <i className="fas fa-star product__aside-rate" />
-                          <i className="fas fa-star product__aside-rate" />
-                          <i className="fas fa-star product__aside-rate" />
-                        </div>
-                        <div className="product__aside-price">
-                          <span className="product__aside-price-current">
-                            15.220.000đ
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="product__aside-item">
-                      <div className="product__aside-img-wrap">
-                        <img src="./client/img/product-5.png" className="product__aside-img" />
-                      </div>
-                      <div className="product__aside-title">
-                        <a href="#" className="product__aside-link">
-                          <h4 className="product__aside-link-heading">Nokia 5.4 (4GB/128GB)</h4>
-                        </a>
-                        <div className="product__aside-rate-wrap">
-                          <i className="fas fa-star product__aside-rate" />
-                          <i className="fas fa-star product__aside-rate" />
-                          <i className="fas fa-star product__aside-rate" />
-                          <i className="fas fa-star product__aside-rate" />
-                          <i className="fas fa-star product__aside-rate" />
-                        </div>
-                        <div className="product__aside-price">
-                          <span className="product__aside-price-current">
-                            5.200.000đ
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="product__aside-item">
-                      <div className="product__aside-img-wrap">
-                        <img src="./client/img/Xiaomi-Mi-9-tím-1.png" className="product__aside-img" />
-                      </div>
-                      <div className="product__aside-title">
-                        <a href="#" className="product__aside-link">
-                          <h4 className="product__aside-link-heading">Điện thoại Xiaomi Mi 9 (6GB/128GB)</h4>
-                        </a>
-                        <div className="product__aside-rate-wrap">
-                          <i className="fas fa-star product__aside-rate" />
-                          <i className="fas fa-star product__aside-rate" />
-                          <i className="fas fa-star product__aside-rate" />
-                          <i className="fas fa-star product__aside-rate" />
-                          <i className="fas fa-star product__aside-rate" />
-                        </div>
-                        <div className="product__aside-price">
-                          <span className="product__aside-price-current">
-                            11.120.000đ
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+
                   </div>
                 </div>
               </aside>

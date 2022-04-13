@@ -53,13 +53,13 @@ export default function ProductList(){
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        products.map(product => (
+                        {
+                            products.map(product => (
                             <tr key={product._id}>
                                 <td>{product._id}</td>
                                 <td>{product.name}</td>
-                                <td>{product.desc}</td>
-                                <td>{product.price}</td>
+                                <td>{product.desc} </td>
+                                <td>{product.price}VND</td>
                                 <td>{product.category}</td>
 
                                 <td>{product.image
@@ -86,7 +86,7 @@ export default function ProductList(){
                                     </button>
 
                                 </td>
-                                <td>{product.status ? 'Ẩn' : 'Hiển thị'}</td>
+                                <td>{product.status ? 'Hiển thị' : 'Ẩn'}</td>
                             </tr>
                         ))}
                 </tbody>

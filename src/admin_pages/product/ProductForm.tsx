@@ -136,15 +136,17 @@ function ProductForm() {
                         <input
                             className="form-control"
                             type="text"
-                            placeholder='Tiêu đề'
+                            placeholder='Sản phẩm'
                             {...register(
                                 'name',
                                 {
-                                    required: { value: true, message: 'Bắt buộc' },
+                                    required: { value: true, message: 'Không được bỏ trống' },
                                 }
                             )}
                         />
-                        <div>{errors.name?.message}</div>
+                        <div id="emailHelp" className="form-text" style={{ color: 'red' }}>
+                            {errors.name ? errors.name.message : ''}
+                        </div>
                     </div>
 
                     <div className="mb-3">
@@ -156,25 +158,31 @@ function ProductForm() {
                             {...register(
                                 'desc',
                                 {
-                                    required: true
+                                    required: { value: true, message: "Không được bỏ trống" }
                                 }
                             )}
                         />
+                        <div id="emailHelp" className="form-text" style={{ color: 'red' }}>
+                            {errors.desc ? errors.desc.message : ''}
+                        </div>
                     </div>
 
                     <div className="mb-3">
                         <label className="form-label">Giá</label>
                         <input
                             className="form-control"
-                            type="text"
-                            placeholder='Mô tả'
+                            type="number"
+                            placeholder='Giá'
                             {...register(
                                 'price',
                                 {
-                                    required: true
+                                    required: { value: true, message: "Không được bỏ trống" }
                                 }
                             )}
                         />
+                        <div id="emailHelp" className="form-text" style={{ color: 'red' }}>
+                            {errors.price ? errors.price.message : ''}
+                        </div>
                     </div>
 
                     <div className="mb-3">
@@ -186,10 +194,13 @@ function ProductForm() {
                             {...register(
                                 'category',
                                 {
-                                    required: true
+                                    required: { value: true, message: "Không được bỏ trống" }
                                 }
                             )}
                         />
+                        <div id="emailHelp" className="form-text" style={{ color: 'red' }}>
+                            {errors.category ? errors.category.message : ''}
+                        </div>
                     </div>
 
                     <div className="mb-3">
@@ -200,12 +211,15 @@ function ProductForm() {
                             {...register(
                                 'image',
                                 {
-                                    required: true
+                                    required: { value: true, message: "Không được bỏ trống" }
                                 }
                             )}
                             onChange={(event) => handleChangeFile(event)}
                             
                         />
+                        <div id="emailHelp" className="form-text" style={{ color: 'red' }}>
+                            {errors.image ? errors.image.message : ''}
+                        </div>
                         <img src={imageBase64} width={100} alt="" />
 
                     </div>
